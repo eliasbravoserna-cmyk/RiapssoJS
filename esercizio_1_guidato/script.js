@@ -255,8 +255,9 @@ const categoriaCandidata = "Speciale";
 if (prezzoCandidata > 0 && categoriaCandidata !== "") {
     console.log("✅ Pizza accettata nel menu!");
 
-} 
-else { console.log("❌ Pizza rifiutata: dati incompleti")
+}
+else {
+    console.log("❌ Pizza rifiutata: dati incompleti")
 
 }
 
@@ -325,18 +326,18 @@ let categoria = "Gourmet";
 
 switch (categoria) {
 
-    case "Classica": console.log("🍕 Le pizze della tradizione"); 
+    case "Classica": console.log("🍕 Le pizze della tradizione");
         break;
 
-    case "Speciale": console.log("⭐ Creazioni dello chef"); 
+    case "Speciale": console.log("⭐ Creazioni dello chef");
         break;
 
-    case "Gourmet": console.log("🏆 Ingredienti ricercati e di alta qualità"); 
+    case "Gourmet": console.log("🏆 Ingredienti ricercati e di alta qualità");
         break;
 
-    case "Stagionale": console.log("🌿 Ingredienti freschi di stagione"); 
+    case "Stagionale": console.log("🌿 Ingredienti freschi di stagione");
         break;
-    
+
 
     default: console.log("❓ Categoria sconosciuta");
 
@@ -432,10 +433,10 @@ const prezziMenu = [5, 12, 8, 18, 6, 15, 9, 22];
 let pizzeCostose = 0;
 
 for (let i = 0; i <= prezziMenu.length; i++) {
-    
+
     if (prezziMenu[i] >= 10) {
         pizzeCostose++;
-        
+
     }
 }
 
@@ -511,6 +512,30 @@ presentaPizza("Capricciosa", 7);  // → "Capricciosa — Costo: €7 → Vendit
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 5.1)
 
+function calcolaFascia(prezzo) {
+    if (prezzo >= 18) {
+        return "Premium";
+
+    } else if (prezzo >= 13) {
+        return "Gourmet";
+
+    } else if (prezzo >= 8) {
+        return "Media"
+
+    } else if (prezzo >= 5) {
+        return "Economica";
+    }
+
+    else {
+        return "Budget"
+    }
+
+}
+
+
+console.log(calcolaFascia(20));
+console.log(calcolaFascia(10));
+console.log(calcolaFascia(4));
 
 
 // ✅ VERIFICA: console mostra "Premium", "Media", "Budget"
@@ -529,6 +554,13 @@ presentaPizza("Capricciosa", 7);  // → "Capricciosa — Costo: €7 → Vendit
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 5.2)
 
+function creaDescrizione(nome, ingredienti, prezzo) {
+    calcolaFascia(prezzo);
+    
+    return `🍕 ${nome} — Ingredienti: ${ingredienti} | Prezzo: €${prezzo} | Fascia: ${fascia}`
+}
+
+console.log(creaDescrizione("Margherita", "Pomodoro, mozzarella", 8));
 
 
 // ✅ VERIFICA: "🍕 Margherita — Ingredienti: Pomodoro, mozzarella | Prezzo: €8 | Fascia: Media"
