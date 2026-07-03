@@ -618,6 +618,15 @@ for (const pizza of pizzeEsempio) {
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 6.1)
 
+const nomiPizze = ["Americana", "Pepperoni", "Hawaiana"];
+
+nomiPizze.push("Margarita");
+console.log(nomiPizze.length);
+console.log(nomiPizze[1]);
+
+nomiPizze.pop();
+
+console.log(nomiPizze);
 
 
 // ✅ VERIFICA: L'array finale ha 3 elementi (dopo il pop)
@@ -637,6 +646,20 @@ for (const pizza of pizzeEsempio) {
 // 3. Stampa nomiMaiuscoli
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 6.2)
+
+for(pizza of nomiPizze) {
+    console.log(`🍕 ${pizza} è nel menu!`);
+}
+
+
+const nomiMaiuscoli = nomiPizze.map(piza => piza.toUpperCase());
+
+//OPPUREEEEEE:
+// const nomiMaiuscoli = nomiPizze.map(function(piza){
+//     return piza.toUpperCase();
+// })
+
+console.log(nomiMaiuscoli);
 
 
 
