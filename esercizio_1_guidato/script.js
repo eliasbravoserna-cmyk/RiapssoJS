@@ -859,6 +859,14 @@ console.log("Titolo attuale:", titoloEl.textContent); // → "Il Nostro Menu"
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 8.1)
 
+const menuTitle = document.querySelector("#titolo-menu");
+menuTitle.textContent = `🍕 ${nomePizzeria}`;
+
+const totale = document.querySelector("#stat-totale");
+totale.textContent = menu.length;
+
+totale.style.color = "#d35400";
+
 
 
 // ✅ VERIFICA: Il titolo nella pagina è cambiato e il numero di pizze è visibile
@@ -880,6 +888,18 @@ console.log("Titolo attuale:", titoloEl.textContent); // → "Il Nostro Menu"
 //    Aggiungi anche la classe "msg-successo": elemento.classList.add("msg-successo")
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 8.2)
+
+const inputVuoto = document.querySelector("#input-nome").value;
+
+const inputPrezzo = Number(document.querySelector("#input-prezzo").value);
+
+console.log(inputVuoto, inputPrezzo);
+
+let divi = document.querySelector("#messaggio");
+divi.textContent = "Benvenuto nella Pizzeria!";
+
+divi.style.display = "block";
+divi.classList.add("msg-successo");
 
 
 
