@@ -556,7 +556,7 @@ console.log(calcolaFascia(4));
 
 function creaDescrizione(nome, ingredienti, prezzo) {
     calcolaFascia(prezzo);
-    
+
     return `🍕 ${nome} — Ingredienti: ${ingredienti} | Prezzo: €${prezzo} | Fascia: ${fascia}`
 }
 
@@ -647,7 +647,7 @@ console.log(nomiPizze);
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 6.2)
 
-for(pizza of nomiPizze) {
+for (pizza of nomiPizze) {
     console.log(`🍕 ${pizza} è nel menu!`);
 }
 
@@ -727,10 +727,30 @@ console.log(nomeEstratto, prezzoEstratto);         // → "Napoletana" 9.5
 // Poi:
 // 1. Stampa il nome con dot notation
 // 2. Cambia il prezzo a 12.00
-// 3. Aggiungi una nuova proprietà "fascia" usando la funzione calcolaFascia(miaPizza.prezzo)
-// 4. Stampa l'oggetto completo: console.log(miaPizza)
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 7.1)
+
+const miaPizza = {
+    nome: "Americana",
+    ingredienti: "formaggio",
+    prezzo: "10.50",
+    disponibile: true,
+
+}
+
+
+console.log(miaPizza.nome);
+miaPizza.prezzo = 12.00;
+
+// 3. Aggiungi una nuova proprietà "fascia" usando la funzione calcolaFascia(miaPizza.prezzo)
+
+miaPizza.fascia = calcolaFascia(miaPizza.prezzo);
+
+
+// 4. Stampa l'oggetto completo: console.log(miaPizza)
+
+console.log(miaPizza);
+
 
 
 
@@ -757,7 +777,31 @@ console.log(nomeEstratto, prezzoEstratto);         // → "Napoletana" 9.5
 
 // 👇 SCRIVI QUI IL TUO CODICE (Step 7.2)
 
+const menu = [
+    {
+        nome: "Margherita",
+        ingredienti: "Pomodoro, mozzarella",
+        prezzo: 7
+    },
 
+    {
+        nome: "Diavola",
+        ingredienti: "Pomodoro, mozzarella, salame piccante",
+        prezzo: 9
+    },
+
+    {
+        nome: "Tartufo",
+        ingredienti: "Crema di tartufo, mozzarella, funghi",
+        prezzo: 16
+    },
+
+];
+
+for (const pissa of menu) {
+    let { nome, prezzo } = pissa;
+    console.log(`${nome}: €${prezzo}`);
+}
 
 // ✅ VERIFICA: Vedi 3 righe tipo "Margherita — €7"
 
